@@ -1,8 +1,8 @@
 package br.com.pegasus.aplicacao.controller;
 
 import br.com.pegasus.aplicacao.dto.AdministradorDTO;
-import br.com.pegasus.aplicacao.useCaseImpl.AdministradorUseCaseImpl;
 import br.com.pegasus.dominio.atores.Administrador;
+import br.com.pegasus.dominio.useCase.AdministradorUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 public class AdministradorController {
 
     @Autowired
-    private AdministradorUseCaseImpl administradorUseCase;
+    private AdministradorUseCase administradorUseCase;
 
     @PostMapping("/cadastrar")
     public void cadastrarAdministrador(@RequestBody AdministradorDTO administradorDTO) {

@@ -1,8 +1,8 @@
-package br.com.pegasus.infraestrutura.adapterImpl;
+package br.com.pegasus.infraestrutura.adapters;
 
 import br.com.pegasus.dominio.atores.Administrador;
-import br.com.pegasus.dominio.ports.saida.AdministradorAdapter;
-import br.com.pegasus.infraestrutura.adapterImpl.base.AdapterImpl;
+import br.com.pegasus.dominio.ports.saida.AdministradorPortaSaida;
+import br.com.pegasus.infraestrutura.adapters.base.AdapterSaidaBase;
 import br.com.pegasus.infraestrutura.entidades.EAdministrador;
 import br.com.pegasus.infraestrutura.repositories.AdministradorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +10,11 @@ import org.springframework.stereotype.Component;
 
 import java.util.Objects;
 
+/**
+ * Classe responsável pela comunicação entre o domínio e a infraestrutura no contexto de Administrador
+ */
 @Component
-public class AdministradorAdapterImpl extends AdapterImpl<Administrador, EAdministrador> implements AdministradorAdapter {
+public class AdministradorAdapterSaida extends AdapterSaidaBase<Administrador, EAdministrador> implements AdministradorPortaSaida {
 
     @Autowired
     private AdministradorRepository repository;

@@ -1,9 +1,9 @@
-package br.com.pegasus.infraestrutura.adapterImpl.base;
+package br.com.pegasus.infraestrutura.adapters.base;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-public abstract class AdapterImpl<A, E> {
+public abstract class AdapterSaidaBase<A, E> {
 
     public E toEntidade(A ator, Class<E> classeEntidade) {
         return converteAtributos(ator, criaInstanciaDaClasse(classeEntidade));
