@@ -1,0 +1,11 @@
+Para rodar, estar dentro de: /mnt/e/GitHub/Estudo-Arquitetura-Hexagonal/Pegasus
+
+Devemos estar na raíz do projeto pois no nosso Dockerfile temos que:
+COPY ../target/Pegasus-0.0.1-SNAPSHOT.jar .
+Para ele conseguir copiar o jar, temos que estar em um contexto que ele consiga acessar o target E o Dockerfile.
+
+Para criar a imagem:
+docker build -f docker/Dockerfile -t pegasus-container-2 .
+
+Para subir o container com a imagem (expondo a porta):
+docker run -p 8080:8080 pegasus-container-2 /bin/bash
