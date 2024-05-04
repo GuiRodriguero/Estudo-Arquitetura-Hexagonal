@@ -1,0 +1,21 @@
+version: '3.9'
+volumes:
+  mysql_data: {}
+services:
+  mysql:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: pegasus-root
+      MYSQL_DATABASE: pegasus
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+  pegasus:
+    depends_on:
+      - mysql
+    image: pegasus-container-2:latest
+    ports:
+      - "8080:8080"
+    restart: always
