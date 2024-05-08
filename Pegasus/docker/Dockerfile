@@ -5,10 +5,10 @@ FROM openjdk:21-slim
 WORKDIR /aplicacao
 
 # Copia o arquivo jar para o diretório da aplicação
-COPY ../target/Pegasus-0.0.1-SNAPSHOT.jar .
+COPY ../target/Pegasus-0.0.2-SNAPSHOT.jar .
 
 # Expõe a porta 8080
 EXPOSE 8080
 
 # Comando para iniciar a aplicação
-ENTRYPOINT ["java", "-jar", "Pegasus-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "Pegasus-0.0.2-SNAPSHOT.jar"]

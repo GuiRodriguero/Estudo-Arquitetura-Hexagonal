@@ -1,0 +1,13 @@
+http://localhost:8080/administrador/cadastrar
+{
+    "id": null,
+    "cpf": "123456",
+    "nome": "admin",
+    "email": "admin@hotmail.com",
+    "telefone": "123657",
+    "endereco": "admin",
+    "login": "admin",
+    "senha": "admin",
+    "cargo": "admin",
+    "setor": "admin"
+}

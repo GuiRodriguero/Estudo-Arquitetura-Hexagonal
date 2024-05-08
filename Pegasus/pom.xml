@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>br.com.pegasus</groupId>
 	<artifactId>Pegasus</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>Pegasus</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -54,15 +54,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
+		<!-- PostgreSQL -->
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-		</dependency>
-		<!-- MySQL -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.33</version>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 
 	</dependencies>
