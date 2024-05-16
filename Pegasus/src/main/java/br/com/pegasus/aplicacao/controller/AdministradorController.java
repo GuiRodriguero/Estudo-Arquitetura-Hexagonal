@@ -1,8 +1,8 @@
 package br.com.pegasus.aplicacao.controller;
 
+import br.com.pegasus.aplicacao.AdministradorAdapterEntrada;
 import br.com.pegasus.aplicacao.dto.AdministradorDTO;
 import br.com.pegasus.dominio.atores.Administrador;
-import br.com.pegasus.dominio.useCase.AdministradorUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,16 +11,16 @@ import org.springframework.web.bind.annotation.*;
 public class AdministradorController {
 
     @Autowired
-    private AdministradorUseCase administradorUseCase;
+    private AdministradorAdapterEntrada administradorAdapterEntrada;
 
     @PostMapping("/cadastrar")
     public void cadastrarAdministrador(@RequestBody AdministradorDTO administradorDTO) {
-        administradorUseCase.criar(administradorDTO.toDominio());
+        administradorAdapterEntrada.criar(administradorDTO.toDominio());
     }
 
     @GetMapping("/{id}")
     public AdministradorDTO buscarAdministrador(@PathVariable Long id) {
-        return toDTO(administradorUseCase.buscarPorId(id));
+        return toDTO(administradorAdapterEntrada.buscarPorId(id));
     }
 
     public AdministradorDTO toDTO(Administrador administrador) {
